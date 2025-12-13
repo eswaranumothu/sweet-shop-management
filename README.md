@@ -33,6 +33,7 @@ This project demonstrates:
 - User Registration
 <img width="1573" height="779" alt="Screenshot 2025-12-14 001049" src="https://github.com/user-attachments/assets/5b43dd18-f1c1-41f2-89e7-1881eed70cbc" />
 <img width="1454" height="596" alt="Screenshot 2025-12-14 001059" src="https://github.com/user-attachments/assets/5d9dd146-2cc5-46c3-b856-4a1513ae8a79" />
+
 - User Login
 - JWT-based authentication
 - Secure protected routes
@@ -43,6 +44,7 @@ This project demonstrates:
   - Purchase sweets
   - View total bill
 <img width="1856" height="818" alt="Screenshot 2025-12-14 002335" src="https://github.com/user-attachments/assets/ecd8b562-47b9-4060-a2e3-6a4aa03b0882" />
+
 **Admin**
   - Add new sweets
   - Update sweet details
