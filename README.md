@@ -19,6 +19,16 @@ This project demonstrates:
 - **SQLAlchemy**-ORM for database modeling and interaction
 - **SQLite**-Lightweight relational database for persistent storage
 - **JWT Authentication**– Secure token-based authentication and authorization
+## Testing
+The backend follows a test-first approach for critical authentication logic.
+Automated tests are written using **Pytest** to validate API behavior and ensure reliability.
+### Test Execution
+```
+pytest
+```
+<img width="1272" height="516" alt="Screenshot 2025-12-13 140355" src="https://github.com/user-attachments/assets/66a37025-a37b-450a-9fe5-950ad332c45c" />
+
+
 ### Frontend
 - **React**– Component-based library for building the user interface
 - **Vite**– Fast build tool and development server for React
