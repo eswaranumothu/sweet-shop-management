@@ -1,0 +1,106 @@
+/* Grid container for sweets */
+.sweets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 15px 0;
+}
+
+/* Individual sweet card with blue theme */
+.sweet-card {
+  background: #e6f0fa; /* very light blue */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(51, 102, 204, 0.25);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
+}
+
+.sweet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(51, 102, 204, 0.4);
+}
+
+/* Sweet title */
+.sweet-card b {
+  font-size: 1.3rem;
+  color: #3366cc;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+/* Sweet info line */
+.sweet-info {
+  font-size: 1rem;
+  color: #29487d;
+  margin-bottom: 16px;
+  user-select: text;
+}
+
+/* Actions container */
+.sweet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Number inputs */
+.sweet-actions input[type="number"] {
+  width: 70px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border: 1.5px solid #3366cc;
+  border-radius: 8px;
+  color: #29487d;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.sweet-actions input[type="number"]:focus {
+  border-color: #1a3d99;
+  box-shadow: 0 0 6px rgba(26, 61, 153, 0.5);
+}
+
+/* Buttons */
+.sweet-actions button {
+  background: linear-gradient(45deg, #4a79d1, #335fcc);
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(51, 102, 204, 0.5);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.sweet-actions button:disabled {
+  background: #a0b5df;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #e0e6fc;
+}
+
+.sweet-actions button:hover:not(:disabled) {
+  background: linear-gradient(45deg, #335fcc, #1a3d99);
+  box-shadow: 0 8px 18px rgba(26, 61, 153, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .sweet-card {
+    padding: 16px 20px;
+  }
+  .sweet-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sweet-actions button, .sweet-actions input[type="number"] {
+    width: 100%;
+  }
+}
