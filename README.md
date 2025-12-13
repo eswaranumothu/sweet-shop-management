@@ -14,20 +14,20 @@ This project demonstrates:
 ## Tech Stack
 
 ### Backend
-- **Python 3.11**
-- **FastAPI**
-- **SQLAlchemy**
-- **SQLite**
-- **JWT Authentication**
+- **Python 3.11**– Core programming language used for backend development
+- **FastAPI**– High-performance web framework for building REST APIs
+- **SQLAlchemy**-ORM for database modeling and interaction
+- **SQLite**-Lightweight relational database for persistent storage
+- **JWT Authentication**– Secure token-based authentication and authorization
 ### Frontend
-- **React**
-- **Vite**
-- **Axios**
-- **HTML / CSS**
+- **React**– Component-based library for building the user interface
+- **Vite**– Fast build tool and development server for React
+- **Axios**– HTTP client for communicating with backend APIs
+- **HTML / CSS**– Structure and styling of the user interface
 ### Tools
-- Git & GitHub
-- Swagger UI
-- VS Code
+- Git & GitHub– Version control and source code management
+- Swagger UI– API documentation and interactive testing
+- VS Code – Development environment for coding and debugging
 ## Features
 ### 👤 Authentication
 - User Registration
