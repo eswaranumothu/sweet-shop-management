@@ -14,7 +14,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",   # Vite frontend
+        "http://localhost:5173",
+        "https://sweet-shop-management.vercel.app"   # Vite frontend
     ],
     allow_credentials=True,
     allow_methods=["*"],
