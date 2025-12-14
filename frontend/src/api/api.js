@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: "https://sweet-shop-management-production.up.railway.app",
 });
 
 // Automatically attach JWT token
