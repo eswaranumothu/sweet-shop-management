@@ -16,7 +16,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "https://sweet-shop-management.vercel.app",
-        "https://https://sweetshopbyeswar.vercel.app/",  # ✅ ADD THIS
+        "https://sweetshopbyeswar.vercel.app",  # ✅ ADD THIS
     ],
     allow_credentials=True,
     allow_methods=["*"],
