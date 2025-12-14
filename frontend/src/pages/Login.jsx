@@ -24,7 +24,7 @@ function Login({ onLogin, onRegister }) {
  return (
   <div className="login-page">
     <div className="login-card">
-      <h2>Login</h2>
+      <h2>Sweet shop Login</h2>
 
       <input
         type="email"

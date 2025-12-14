@@ -118,4 +118,158 @@
     font-size: 1.5rem;
   }
 }
+.search-bar {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.search-bar input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.search-bar button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #1d4ed8;
+}
+.search-bar {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.search-bar input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.search-bar button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #1d4ed8;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+}
+/* Top Header Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  margin-bottom: 20px;
+
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: white;
+  border-radius: 12px;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Logout Button */
+.logout-btn {
+  background: white;
+  color: #2563eb;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #e0e7ff;
+}
+/* 🌤 Full Page Background */
+.page-bg {
+  min-height: 100vh;
+  padding: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #e0f2fe,
+    #dbeafe,
+    #bfdbfe
+  );
+}
+
+/* 🧊 Glass-like content wrapper */
+.page-content {
+  min-height: calc(100vh - 40px);
+  padding: 20px;
+
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.sweet-card {
+  background: rgba(239, 246, 255, 0.9);
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sweet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(59, 130, 246, 0.25);
+}
+.login-text {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.login-text span {
+  color: #16a085;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-text span:hover {
+  color: #138d75;
+}
+
+
+
+
 

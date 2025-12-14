@@ -38,6 +38,12 @@ function Register({ onRegistered }) {
       />
 
       <button onClick={handleRegister}>Register</button>
+
+      {/* ✅ CENTERED LOGIN LINK */}
+      <p className="login-text">
+        Already have an account?{" "}
+        <span onClick={onRegistered}>Login</span>
+      </p>
     </div>
   );
 }

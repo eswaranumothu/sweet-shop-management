@@ -21,25 +21,29 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <div className="card">
-        {showRegister ? (
-          <>
-            <Register onRegistered={() => setShowRegister(false)} />
-            <p className="register-text">
-              Already have an account?{" "}
-              <span onClick={() => setShowRegister(false)}>Login</span>
-            </p>
-          </>
-        ) : (
-          <>
-            <Login
-              onLogin={() => setLoggedIn(true)}
-              onRegister={() => setShowRegister(true)}
-            />
-          </>
-        )}
+    <div className="app-wrapper">
+      <div className="container">
+        <div className="card">
+          {showRegister ? (
+            <>
+              <Register onRegistered={() => setShowRegister(false)} />
+              
+            </>
+          ) : (
+            <>
+              <Login
+                onLogin={() => setLoggedIn(true)}
+                onRegister={() => setShowRegister(true)}
+              />
+            </>
+          )}
+        </div>
       </div>
+
+      {/* ✅ FOOTER */}
+      <footer className="footer">
+        Sweet Shop Management System · Incubyte Assessment · Eswar Anumothu
+      </footer>
     </div>
   );
 }

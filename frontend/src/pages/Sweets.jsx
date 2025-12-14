@@ -16,6 +16,14 @@ function Sweets({ onLogout }) {
     price: "",
     quantity: "",
   });
+  // 🔍 SEARCH STATE
+const [search, setSearch] = useState({
+  name: "",
+  category: "",
+  min_price: "",
+  max_price: "",
+});
+
 
   // 🔢 RESTOCK QUANTITY PER SWEET (ADMIN)
   const [restockQty, setRestockQty] = useState({});
@@ -56,6 +64,24 @@ function Sweets({ onLogout }) {
 
     loadSweets();
   };
+  // 🔍 SEARCH SWEETS
+const searchSweets = async () => {
+  try {
+    const params = {};
+
+    if (search.name) params.name = search.name;
+    if (search.category) params.category = search.category;
+    if (search.min_price) params.min_price = search.min_price;
+    if (search.max_price) params.max_price = search.max_price;
+
+    const res = await api.get("/api/sweets/search", { params });
+    setSweets(res.data);
+  } catch (err) {
+    console.error(err);
+    alert("Search failed");
+  }
+};
+
 
   // ✏️ UPDATE SWEET (ADMIN)
   const updateSweet = async (id) => {
@@ -65,6 +91,23 @@ function Sweets({ onLogout }) {
     });
     loadSweets();
   };
+
+  const deleteSweet = async (id) => {
+  const confirmDelete = window.confirm(
+    "Are you sure you want to delete this sweet?"
+  );
+
+  if (!confirmDelete) return;
+
+  try {
+    await api.delete(`/api/sweets/${id}`);
+    loadSweets(); // refresh list
+  } catch (err) {
+    console.error(err);
+    alert("Delete failed. Admin access required.");
+  }
+};
+
 
   // ➕ ADD SWEET (ADMIN)
   const addSweet = async () => {
@@ -90,10 +133,16 @@ function Sweets({ onLogout }) {
   };
 
   return (
-    <div>
-      <h2>Sweets</h2>
-      <button onClick={onLogout}>Logout</button>
-      <hr />
+  <div className="page-bg">
+    <div className="page-content">
+
+      {/* 🔷 TOP BAR */}
+      <div className="top-bar">
+        <h2 className="app-title">🍬 Sweet Shop</h2>
+        <button className="logout-btn" onClick={onLogout}>
+          Logout
+        </button>
+      </div>
 
       {/* 💰 TOTAL BILL (USER) */}
       {!isAdmin && <h3>Total Bill: ₹{totalBill}</h3>}
@@ -104,90 +153,142 @@ function Sweets({ onLogout }) {
         <>
           <h3>Add New Sweet (Admin)</h3>
 
-          <input
-            placeholder="Name"
-            value={newSweet.name}
-            onChange={(e) =>
-              setNewSweet({ ...newSweet, name: e.target.value })
-            }
-          />
+          <div className="search-bar">
+            <input
+              placeholder="Name"
+              value={newSweet.name}
+              onChange={(e) =>
+                setNewSweet({ ...newSweet, name: e.target.value })
+              }
+            />
 
-          <input
-            placeholder="Category"
-            value={newSweet.category}
-            onChange={(e) =>
-              setNewSweet({ ...newSweet, category: e.target.value })
-            }
-          />
+            <input
+              placeholder="Category"
+              value={newSweet.category}
+              onChange={(e) =>
+                setNewSweet({ ...newSweet, category: e.target.value })
+              }
+            />
 
-          <input
-            type="number"
-            placeholder="Price"
-            value={newSweet.price}
-            onChange={(e) =>
-              setNewSweet({ ...newSweet, price: e.target.value })
-            }
-          />
+            <input
+              type="number"
+              placeholder="Price"
+              value={newSweet.price}
+              onChange={(e) =>
+                setNewSweet({ ...newSweet, price: e.target.value })
+              }
+            />
 
-          <input
-            type="number"
-            placeholder="Quantity"
-            value={newSweet.quantity}
-            onChange={(e) =>
-              setNewSweet({ ...newSweet, quantity: e.target.value })
-            }
-          />
+            <input
+              type="number"
+              placeholder="Quantity"
+              value={newSweet.quantity}
+              onChange={(e) =>
+                setNewSweet({ ...newSweet, quantity: e.target.value })
+              }
+            />
 
-          <button onClick={addSweet}>Add Sweet</button>
+            <button onClick={addSweet}>Add Sweet</button>
+          </div>
+
           <hr />
         </>
       )}
 
-      {/* 🍭 SWEETS LIST */}
-      {<div className="sweets-grid">
-  {sweets.map((s) => (
-    <div key={s.id} className="sweet-card">
-      <b>{s.name}</b>
-      <div className="sweet-info">
-        Price: ₹{s.price} | Qty: {s.quantity}
+      {/* 🔍 SEARCH BAR */}
+      <div className="search-bar">
+        <input
+          placeholder="Search by name"
+          value={search.name}
+          onChange={(e) =>
+            setSearch({ ...search, name: e.target.value })
+          }
+        />
+
+        <input
+          placeholder="Category"
+          value={search.category}
+          onChange={(e) =>
+            setSearch({ ...search, category: e.target.value })
+          }
+        />
+
+        <input
+          type="number"
+          placeholder="Min Price"
+          value={search.min_price}
+          onChange={(e) =>
+            setSearch({ ...search, min_price: e.target.value })
+          }
+        />
+
+        <input
+          type="number"
+          placeholder="Max Price"
+          value={search.max_price}
+          onChange={(e) =>
+            setSearch({ ...search, max_price: e.target.value })
+          }
+        />
+
+        <button onClick={searchSweets}>Search</button>
+        <button onClick={loadSweets}>Clear</button>
       </div>
 
-      <div className="sweet-actions">
-        {/* USER BUY BUTTON */}
-        {!isAdmin && (
-          <button
-            disabled={s.quantity === 0}
-            onClick={() => buySweet(s)}
-          >
-            Buy 1
-          </button>
-        )}
+      {/* 🍭 SWEETS GRID */}
+      <div className="sweets-grid">
+        {sweets.map((s) => (
+          <div key={s.id} className="sweet-card">
+            <b>{s.name}</b>
 
-        {/* ADMIN CONTROLS */}
-        {isAdmin && (
-          <>
-            <input
-              type="number"
-              placeholder="Qty"
-              value={restockQty[s.id] || ""}
-              onChange={(e) =>
-                setRestockQty({
-                  ...restockQty,
-                  [s.id]: e.target.value,
-                })
-              }
-            />
-            <button onClick={() => restockSweet(s.id)}>Restock</button>
+            <div className="sweet-info">
+              Price: ₹{s.price} | Qty: {s.quantity}
+            </div>
 
-            <button onClick={() => updateSweet(s.id)}>Update</button>
-          </>
-        )}
+            <div className="sweet-actions">
+              {!isAdmin && (
+                <button
+                  disabled={s.quantity === 0}
+                  onClick={() => buySweet(s)}
+                >
+                  Buy
+                </button>
+              )}
+
+              {isAdmin && (
+                <>
+                  <input
+                    type="number"
+                    placeholder="Qty"
+                    value={restockQty[s.id] || ""}
+                    onChange={(e) =>
+                      setRestockQty({
+                        ...restockQty,
+                        [s.id]: e.target.value,
+                      })
+                    }
+                  />
+
+                  <button onClick={() => restockSweet(s.id)}>Restock</button>
+                  <button onClick={() => updateSweet(s.id)}>Update</button>
+
+                  <button
+                    className="delete-btn"
+                    onClick={() => deleteSweet(s.id)}
+                  >
+                    Delete
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
+
     </div>
-  ))}
-</div>}
-    </div>
-  );
+  </div>
+);
+
 }
 
 export default Sweets;
