@@ -41,10 +41,13 @@ pytest
 ## Features
 ### 👤 Authentication
 - User Registration
-<img width="1573" height="779" alt="Screenshot 2025-12-14 001049" src="https://github.com/user-attachments/assets/5b43dd18-f1c1-41f2-89e7-1881eed70cbc" />
-<img width="1454" height="596" alt="Screenshot 2025-12-14 001059" src="https://github.com/user-attachments/assets/5d9dd146-2cc5-46c3-b856-4a1513ae8a79" />
+
+<img width="1639" height="858" alt="Screenshot 2025-12-14 132732" src="https://github.com/user-attachments/assets/6993ff28-8dec-4e62-bbb9-a548d347faef" />
 
 - User Login
+<img width="1330" height="788" alt="Screenshot 2025-12-14 134023" src="https://github.com/user-attachments/assets/df01bce5-5efb-4c82-8460-4475dbb67853" />
+
+  
 - JWT-based authentication
 - Secure protected routes
 
@@ -54,19 +57,30 @@ pytest
   - View sweets
   - Purchase sweets
   - View total bill
-<img width="1536" height="672" alt="ss" src="https://github.com/user-attachments/assets/ce4f5653-c19d-4676-8501-69a7cf45a770" />
+<img width="1854" height="879" alt="Screenshot 2025-12-14 134128" src="https://github.com/user-attachments/assets/c2e55f35-7540-4774-b7cf-df0b5aec513b" />
+
 
 **Admin**
   - Add new sweets
   - Update sweet details
   - Restock sweets
   - Delete sweets
-<img width="1870" height="816" alt="Screenshot 2025-12-14 001246" src="https://github.com/user-attachments/assets/0818dc62-567b-46c6-8bde-b92afdaad6ee" />
+<img width="1835" height="875" alt="Screenshot 2025-12-14 134250" src="https://github.com/user-attachments/assets/89001f02-5a5c-4843-ab8c-87e64500df56" />
+
 
  ### 🍭 Sweet Management
 - Add sweets
+<img width="1432" height="146" alt="Screenshot 2025-12-14 134418" src="https://github.com/user-attachments/assets/882db9bf-35dc-41c4-88cc-3668d2854fb5" />
+<img width="1788" height="363" alt="Screenshot 2025-12-14 134432" src="https://github.com/user-attachments/assets/1efa834c-5c77-4f01-980c-e68ad4404048" />
+
 - List sweets
 - Search sweets (name, category, price range)
+<img width="1841" height="845" alt="Screenshot 2025-12-14 134533" src="https://github.com/user-attachments/assets/7c6f55f5-537a-4166-9aff-969591245997" />
+- delte Sweets
+Deleting Kheer!
+<img width="1827" height="882" alt="Screenshot 2025-12-14 134712" src="https://github.com/user-attachments/assets/da774b7d-07fb-4466-a94c-e64948d993ae" />
+<img width="1850" height="873" alt="Screenshot 2025-12-14 134733" src="https://github.com/user-attachments/assets/0d1f72a2-adce-4a9d-99c5-f15f1bcb6761" />
+
 - Purchase sweets
 - Restock inventory
 - Real-time quantity updates
