@@ -2,6 +2,7 @@
 Incubyte Assessment Project — Sweet Shop Management System built with FastAPI, React, JWT authentication, and role-based authorization
 A full-stack Sweet Shop Management System built using FastAPI (Backend) and React + Vite (Frontend) with JWT-based authentication, role-based access (Admin/User), and a modern UI.
 
+Application Link: https://sweetshopbyeswar.vercel.app
 # Project Overview
 This project demonstrates:
 - Backend API design using **FastAPI**
@@ -191,3 +192,36 @@ I used ChatGpt,Gemini,Workik whenever i face any Major error and that requires d
 - AI tools were also used to assist in refactoring repetitive logic, improving error handling patterns, and enhancing UI styling without modifying application behavior.
 
 - I tracked my ai uasge and situations are noted for transparancy.
+
+## 🚀 Deployment
+
+This application is fully deployed and accessible online.
+
+### 🔹 Backend Deployment
+- **Platform:** Railway  
+- **Framework:** FastAPI  
+- **Database:** SQLite  
+- **Status:** Running continuously (24/7)
+
+**Backend URL:**  
+https://sweet-shop-management-production.up.railway.app
+
+---
+### 🔹 Frontend Deployment
+- **Platform:** Vercel  
+- **Framework:** React (Vite)  
+- **Status:** Live and connected to backend
+
+**Frontend URL:**  
+https://sweetshopbyeswar.vercel.app
+
+---
+
+### 🔹 CORS Configuration
+The backend is configured to allow requests from:
+- `http://localhost:5173` (local development)
+- `https://sweetshopbyeswar.vercel.app` (production frontend)
+
+This ensures seamless communication between frontend and backend.
+
+---
